@@ -14,12 +14,10 @@ public class Apple extends Food {
     // Поэтому переопределяем метод из родительского класса
     @Override
     public int getDiscount() {
-        if (Colour.RED_COLOUR.equals(colour)) {
-            return Discount.withDiscount;
-        } else {
-            return Discount.withoutDiscount;
-        }
+    return Colour.RED_COLOUR.equals(colour) ? Discount.WITH_DISCOUNT : Discount.WITHOUT_DISCOUNT;
     }
+
+
 }
 
 

@@ -12,8 +12,7 @@ public class ShoppingCart { // пакет service. В нём создай кла
     // 1. получить общую сумму товаров в корзине без скидки
     public double totalSum() {
         double total = 0.0;
-        for (int i = 0; i < products.length; i++) {
-            Food product = products[i];
+        for (Food product: products) {
             total = total + product.getPrice() * product.getAmount();
         }
         return total;
@@ -21,8 +20,7 @@ public class ShoppingCart { // пакет service. В нём создай кла
     // 2. получить общую сумму товаров в корзине со скидкой
     public double totalSumDiscount() {
         double total = 0.0;
-        for (int i = 0; i < products.length; i++) {
-            Food product = products[i];
+        for (Food product: products) {
             double priceAfterDiscount = (100 - product.getDiscount()) / (double)100;
             total = total + product.getPrice() * product.getAmount() * priceAfterDiscount;
         }
@@ -31,9 +29,8 @@ public class ShoppingCart { // пакет service. В нём создай кла
     // 3. получить общую сумму всех вегетарианских продуктов в корзине без скидки.
     public double totalSumVegetarian() {
         double total = 0.0;
-        for (int i = 0; i < products.length; i++) {
-            Food product = products[i];
-            if (product.getIsVegetarian()) {
+        for (Food product: products)  {
+            if (product.isVegetarian()) {
                 total = total + product.getPrice() * product.getAmount();
             }
         }

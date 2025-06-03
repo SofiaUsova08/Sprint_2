@@ -1,8 +1,8 @@
 package model.constants;
 
 public class Discount { //Discount для значений скидок
-    public static final int withDiscount = 60;
-    public static final int withoutDiscount = 0;
+    public static final int WITH_DISCOUNT = 60;
+    public static final int WITHOUT_DISCOUNT = 0;
 }
 
 

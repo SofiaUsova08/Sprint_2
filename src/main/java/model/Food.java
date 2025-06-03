@@ -1,5 +1,4 @@
 package model;
-import model.constants.Colour;
 import model.constants.Discount;
 
 public abstract class Food implements Discountable { // класс Food реализует интерфейс Discountable, чтобы наследники мошли испрользовать метод getDiscount()
@@ -9,7 +8,7 @@ public abstract class Food implements Discountable { // класс Food реал
     protected final boolean isVegetarian; // флаг, который показывает, вегетарианский ли продукт//
 
     // У наследников Food (Meat и Apple) должны быть конструкторы, чтобы не дублировать, конструктор выношу сюда
-    public Food(int amount, double price, boolean isVegetarian){
+    protected Food(int amount, double price, boolean isVegetarian){
         this.amount = amount;
         this.price = price;
         this.isVegetarian = isVegetarian;
@@ -17,7 +16,7 @@ public abstract class Food implements Discountable { // класс Food реал
     // дефолтный getDiscount() без скидки
     @Override
     public int getDiscount() {
-            return Discount.withoutDiscount;
+            return Discount.WITHOUT_DISCOUNT;
         }
 
     // геттер для amount
@@ -28,8 +27,8 @@ public abstract class Food implements Discountable { // класс Food реал
     public double getPrice(){
         return price;
     }
-    // геттер для amount
-    public boolean getIsVegetarian(){
+    // геттер для isVegetarian
+    public boolean isVegetarian(){
         return isVegetarian;
     }
 }
